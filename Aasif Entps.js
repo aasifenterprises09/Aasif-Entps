@@ -217,8 +217,9 @@ var  roletype =rec.role;
         app.AddLayout( lay );
         app.AddDrawer( drawerScroll, "Left", drawerWidth );
         
-         svc = app.CreateService( "this", "this", OnServiceReady );
-            
+         //Start/connect to our service.
+    svc = app.CreateService( "this", "this", OnServiceReady );
+    svc.SetOnMessage( OnServiceMessage );
 
     //This will cause your service to start at boot.
     //(Set it to "none" if you need to stop it starting)
@@ -233,11 +234,17 @@ var  roletype =rec.role;
 	loc2.Start()
         }
         
-        function OnServiceReady()
+        //Called after our service has started.
+function OnServiceReady()
 {
     app.Debug( "Service Ready" );
 }
 
+//Called when messages comes from our service.
+function OnServiceMessage( msg )
+{
+    //recieve message from service
+}
         
         
         
