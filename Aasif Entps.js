@@ -217,7 +217,13 @@ var  roletype =rec.role;
         app.AddLayout( lay );
         app.AddDrawer( drawerScroll, "Left", drawerWidth );
         
-        
+         svc = app.CreateService( "this", "this", OnServiceReady );
+            
+
+    //This will cause your service to start at boot.
+    //(Set it to "none" if you need to stop it starting)
+    app.SetAutoBoot( "Service" );
+
 
         	usercheck(app.LoadText( "check1" ),app.LoadText( "check2" ));
         	
@@ -226,6 +232,16 @@ var  roletype =rec.role;
 		loc2.SetRate( 60 ) //10 seconds.
 	loc2.Start()
         }
+        
+        function OnServiceReady()
+{
+    app.Debug( "Service Ready" );
+}
+
+        
+        
+        
+        
    function loc2_OnChange( data )
 {
 		app.SaveText( "loc", data.latitude+","+data.longitude );
