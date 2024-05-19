@@ -420,6 +420,11 @@ document.getElementById("mystyle").innerHTML = document.getElementById("mystyle"
 <div style="width:96%;margin:2%;" >
 <div class="F12 myfont" style="padding-top:5px;padding-left:5px;" >
 <table style="width:100%;" >
+<tr style="height:50px;">
+<td style="text-align:center;"><button class="mybutton" style="width:90%;"onclick="k2();"><strong >Add Online Report <strong></strong></button></td>
+</tr>
+</table>
+<table style="width:100%;" >
 <tr>
 <td style="width:33%;" ><button class="mybutton"style="width:90%;" onclick="group()">Add Employee</button></td>
 <td style="width:34%;" ><button class="mybutton"style="width:90%;" onclick="employees()">View Employees</button></td>
@@ -533,6 +538,12 @@ app.SaveText( "empid2", app.LoadText( "empid" ) )
 app.SaveText( "first",1 )
 app.Execute("lbrinfo();");   
 }
+
+function k2()
+{
+app.Execute("addonline();");   
+}
+
 
 function send()
 {

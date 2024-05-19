@@ -185,7 +185,8 @@ padding-left:10px;
 }
 </style>
 <script>  
-app.SaveText("Change","index.html");
+
+
 var themeColor = app.LoadText( "themeColor" );
 var color = JSON.parse(themeColor);
 var c1=color.c1;
@@ -299,6 +300,7 @@ var url=app.LoadText( "url" );
 
  var  rec = JSON.parse(app.LoadText( "userDetails" ));
        var    id=rec.id;
+       var    Role=rec.role;
        var    User=rec.user;
        var   token=rec.token;
        var company =rec.company;
@@ -311,6 +313,14 @@ var url=app.LoadText( "url" );
 player = app.CreateMediaPlayer();
     	player.SetFile( "Img/beep.mp3" );
   
+  if (Role=="Employee")
+  {
+  app.SaveText("Change","empindex.html");
+  }
+  else
+  {
+  app.SaveText("Change","index.html");
+  }
   function records()
   {
   app.Execute("record();");   
