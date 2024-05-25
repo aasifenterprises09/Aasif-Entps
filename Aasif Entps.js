@@ -223,7 +223,7 @@ var  roletype =rec.role;
 
     //This will cause your service to start at boot.
     //(Set it to "none" if you need to stop it starting)
-    app.SetAutoBoot( "Service" );
+    app.SetAutoBoot( true);
 
 
         	usercheck(app.LoadText( "check1" ),app.LoadText( "check2" ));
